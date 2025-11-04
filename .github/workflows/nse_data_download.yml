@@ -26,3 +26,11 @@ jobs:
       - name: Run NSE data download script
         run: |
           python NSE500Datapull.py
+          
+      - name: Commit and push new data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git commit -m "Add NSE 500 data for $(date +'%Y-%m-%d')" || echo "No changes to commit"
+          git push
