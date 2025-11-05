@@ -11,6 +11,9 @@ headers = {
     "Referer": "https://www.nseindia.com/"
 }
 
+# Ensure data folder exists
+os.makedirs("data", exist_ok=True)
+
 # Start a session
 session = requests.Session()
 session.headers.update(headers)
@@ -26,7 +29,7 @@ df = pd.DataFrame(data["data"])
 
 # Save to CSV file with today's date
 today = datetime.now().strftime("%Y-%m-%d")
-filename = f"nifty500_data_{today}.csv"
+filename = f"data/nifty500_data_{today}.csv"
 
 df.to_csv(filename, index=False)
 print(f"✅ Nifty 500 data saved to {filename}")
