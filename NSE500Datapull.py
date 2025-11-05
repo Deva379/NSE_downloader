@@ -1,5 +1,5 @@
 #NSE500Datapull
-import os
+#import os
 import requests
 import pandas as pd
 from datetime import datetime
@@ -13,7 +13,7 @@ headers = {
 }
 
 # Ensure data folder exists
-os.makedirs("data", exist_ok=True)
+#os.makedirs("data", exist_ok=True)
 
 # Start a session
 session = requests.Session()
