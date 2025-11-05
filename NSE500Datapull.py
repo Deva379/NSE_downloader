@@ -1,4 +1,5 @@
 #NSE500Datapull
+import os
 import requests
 import pandas as pd
 from datetime import datetime
